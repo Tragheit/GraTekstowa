@@ -44,15 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Broń.cs" />
+    <Compile Include="Gra.cs" />
     <Compile Include="Iwalczący.cs" />
     <Compile Include="Mag.cs" />
     <Compile Include="MiksturaLecząca.cs" />
     <Compile Include="MiksturaWzmocnienia.cs" />
+    <Compile Include="Ogr.cs" />
     <Compile Include="Postać.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Przedmiot.cs" />
+    <Compile Include="Straszydło.cs" />
+    <Compile Include="Wiedźma.cs" />
     <Compile Include="Wojownik.cs" />
+    <Compile Include="Łotr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

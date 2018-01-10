@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using SilnikGraficzny;
 
 namespace GraTekstowaJipp
@@ -10,20 +7,15 @@ namespace GraTekstowaJipp
     {
         static void Main(string[] args)
         {
-            Silnik silnik = new Silnik(60, 25);            
-            Wojownik janusz = new Wojownik("Janusz");
-            Wojownik rysiek = new Wojownik("Rysiek");
-            Mag adam = new Mag("Adam");
+            Silnik silnik = new Silnik(60, 25);
 
-            rysiek.WyświetlOpisPostaci();
-            adam.WyświetlOpisPostaci();
-            
-            Console.ReadKey();
-            Console.Clear();
-            rysiek.Walcz(adam);
+            Wojownik wojownik = new Wojownik("Janusz");
+            Łotr łotr = new Łotr("Piotr");
+            Mag mag = new Mag("Adam");
+            Straszydło straszydło = new Straszydło("Staszek");
 
-            
-           
+            wojownik.Walcz(straszydło);
+
             Console.ReadKey();
         }
     }

@@ -23,9 +23,19 @@ namespace GraTekstowaJipp
             this.Imię = Imię;
         }
 
-        public void WyświetlImię()
+        public String ZwróćImię()
         {
-            Silnik.WyświetlInformacje(Imię);
+            return Imię;
+        }
+
+        public int ZwróćObrażenia()
+        {
+            return obrażeniaPostaci;
+        }
+
+        public int ZwróćŻycie()
+        {
+            return życiePostaci;
         }
 
         public virtual void KrzyknijNaPrzeciwnika()
@@ -35,24 +45,28 @@ namespace GraTekstowaJipp
 
         public abstract void WyświetlOpisPostaci();
 
-        public virtual void Walcz(Postać postać) {
-            String atakPostaci = Imię + " atakuje " + postać.Imię + " zadając " + obrażeniaPostaci;
-            String atakPotwora = postać.Imię + " atakuje " + Imię + " zadając " + postać.obrażeniaPostaci;
-            String potwórWygrywa = Imię + " zabija " + postać.Imię;
-            String postaćWygrywa = Imię + " zabija " + postać.Imię;
+        public virtual void Walcz(Postać przeciwnik) {
+            String atakPostaci = Imię + " atakuje " + przeciwnik.Imię + " zadając " + obrażeniaPostaci;
+            String atakPotwora = przeciwnik.Imię + " atakuje " + Imię + " zadając " + przeciwnik.obrażeniaPostaci;
+            String potwórWygrywa = Imię + " zwyciężą ";
+            String postaćWygrywa = Imię + " zwycięża ";
 
-            while (życiePostaci > 0 || postać.życiePostaci > 0)
+            while (życiePostaci > 0 || przeciwnik.życiePostaci > 0)
             {
+                
                 Silnik.WyświetlDialogPostaci(atakPostaci);
-                postać.życiePostaci -= obrażeniaPostaci;
+                przeciwnik.życiePostaci -= obrażeniaPostaci;
 
-                if(postać.życiePostaci <= 0) { break; }
+                if (przeciwnik is Straszydło && przeciwnik.życiePostaci <= 4)
+                { przeciwnik.Uciekaj(); }
+
+                if (przeciwnik.życiePostaci <= 0) { break; }
 
                 Silnik.WyświetlDialogPotwora(atakPotwora);
-                życiePostaci -= postać.obrażeniaPostaci;
+                życiePostaci -= przeciwnik.obrażeniaPostaci;
             }
 
-            if (życiePostaci > postać.życiePostaci)
+            if (życiePostaci > przeciwnik.życiePostaci)
             {
                 Silnik.WyświetlInformacje(postaćWygrywa);
             } else

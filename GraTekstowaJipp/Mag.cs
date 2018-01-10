@@ -25,7 +25,7 @@ namespace GraTekstowaJipp
         public Mag() { }
         public Mag(String imię) : base(imię) { }
 
-        public void wyświetlEkwipunek()
+        public void WyświetlEkwipunek()
         {
 
             Silnik.WyświetlInformacje("Ekwipunek: \n");
