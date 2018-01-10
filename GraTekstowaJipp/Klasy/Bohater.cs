@@ -4,32 +4,29 @@ using SilnikGraficzny;
 
 namespace GraTekstowaJipp
 {
-    public class Łotr : Postać
+    public abstract class Bohater : Postać
     {
-        private String opis;
         public override int Życie
         {
-            // ustawic wartosc zycia
-            get { return życiePostaci - 3; }
-            set { życiePostaci = value + 3; }
+            get { return życiePostaci - 2; }
+            set { życiePostaci = value + 2; }
         }
 
         public override int Obrażenia
         {
-            //ustawic wartosc obrazen
-            get { return obrażeniaPostaci - 3; }
-            set { obrażeniaPostaci = value + 3; }
+            get { return obrażeniaPostaci - 5; }
+            set { obrażeniaPostaci = value + 5; }
         }
+
+        public Bohater() { }
+        public Bohater(String imię) : base(imię) {}
+        ~Bohater() { }
 
         private List<Przedmiot> Ekwipunek = new List<Przedmiot>();
 
-        public Łotr() { }
-        public Łotr(String imię) : base(imię) { }
-        ~Łotr() { };
-
         public void WyświetlEkwipunek()
         {
-            
+
             Silnik.WyświetlInformacje("Ekwipunek: \n");
             foreach (Przedmiot element in Ekwipunek)
             {
@@ -45,7 +42,7 @@ namespace GraTekstowaJipp
         public void UżyjPrzedmiotu(MiksturaLecząca miksturaLecząca)
         {
             życiePostaci += miksturaLecząca.wartośćLeczenia;
-            Silnik.WyświetlInformacje("Uleczyłeś się o: " + miksturaLecząca.wartośćLeczenia);
+            Silnik.WyświetlInformacje("Uleczyłeś się o: " + miksturaLecząca.wartośćLeczenia + 3);
             Ekwipunek.Remove(miksturaLecząca);
         }
 
@@ -59,24 +56,16 @@ namespace GraTekstowaJipp
         {
             życiePostaci += miksturaWzmocnienia.WartośćWzmocnieniaZdrowia;
             obrażeniaPostaci += miksturaWzmocnienia.WartośćWzmocnieniaObrażeń;
-
             Silnik.WyświetlInformacje
                 ("Twoje życie wzrosło o: " + miksturaWzmocnienia.WartośćWzmocnieniaZdrowia +
                 ",a Twoje obrażenia wzrosły o: " + miksturaWzmocnienia.WartośćWzmocnieniaObrażeń);
             Ekwipunek.Remove(miksturaWzmocnienia);
         }
 
-        public override void KrzyknijNaPrzeciwnika()
-        {
-            String informacja = "Krzyczysz na wroga, wzmacniasz swoje morale, obrażenia rosną o 2.";
-            Silnik.WyświetlDialogPostaci(informacja);
-            obrażeniaPostaci += 2;
-        }
 
-        public override void WyświetlOpisPostaci()
-        {
-            opis = "Klasa Łotr \n obrażenia:" + obrażeniaPostaci + ", życie:" + życiePostaci;
-            Silnik.WyświetlInformacje(opis);
-        }
+
+
+
+        public abstract void WyświetlOpisPostaci();
     }
 }

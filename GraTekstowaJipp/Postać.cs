@@ -43,8 +43,6 @@ namespace GraTekstowaJipp
             Silnik.WyświetlInformacje("Przeciwnika to nie rusza...");
         }
 
-        public abstract void WyświetlOpisPostaci();
-
         public virtual void Walcz(Postać przeciwnik) {
             String atakPostaci = Imię + " atakuje " + przeciwnik.Imię + " zadając " + obrażeniaPostaci;
             String atakPotwora = przeciwnik.Imię + " atakuje " + Imię + " zadając " + przeciwnik.obrażeniaPostaci;
@@ -56,6 +54,7 @@ namespace GraTekstowaJipp
                 
                 Silnik.WyświetlDialogPostaci(atakPostaci);
                 przeciwnik.życiePostaci -= obrażeniaPostaci;
+                System.Threading.Thread.Sleep(1500);
 
                 if (przeciwnik is Straszydło && przeciwnik.życiePostaci <= 4)
                 { przeciwnik.Uciekaj(); }
@@ -64,6 +63,7 @@ namespace GraTekstowaJipp
 
                 Silnik.WyświetlDialogPotwora(atakPotwora);
                 życiePostaci -= przeciwnik.obrażeniaPostaci;
+                System.Threading.Thread.Sleep(1500);
             }
 
             if (życiePostaci > przeciwnik.życiePostaci)

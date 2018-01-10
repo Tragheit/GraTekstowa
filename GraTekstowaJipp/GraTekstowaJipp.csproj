@@ -43,21 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Broń.cs" />
-    <Compile Include="Gra.cs" />
+    <Compile Include="Klasy\Bohater.cs" />
+    <Compile Include="Przedmioty\Broń.cs" />
+    <Compile Include="Potwory\Golem.cs" />
+    <Compile Include="Logika_Sterowanie\Gra.cs" />
     <Compile Include="Iwalczący.cs" />
-    <Compile Include="Mag.cs" />
-    <Compile Include="MiksturaLecząca.cs" />
-    <Compile Include="MiksturaWzmocnienia.cs" />
-    <Compile Include="Ogr.cs" />
+    <Compile Include="Klasy\Mag.cs" />
+    <Compile Include="Przedmioty\MiksturaLecząca.cs" />
+    <Compile Include="Przedmioty\MiksturaWzmocnienia.cs" />
+    <Compile Include="Potwory\Ogr.cs" />
     <Compile Include="Postać.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Logika_Sterowanie\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Przedmiot.cs" />
-    <Compile Include="Straszydło.cs" />
-    <Compile Include="Wiedźma.cs" />
-    <Compile Include="Wojownik.cs" />
-    <Compile Include="Łotr.cs" />
+    <Compile Include="Przedmioty\Przedmiot.cs" />
+    <Compile Include="Potwory\Straszydło.cs" />
+    <Compile Include="Potwory\Trol.cs" />
+    <Compile Include="Potwory\Wiedźma.cs" />
+    <Compile Include="Klasy\Wojownik.cs" />
+    <Compile Include="Klasy\Łotr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

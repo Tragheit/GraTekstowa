@@ -3,9 +3,8 @@ using SilnikGraficzny;
 
 namespace GraTekstowaJipp
 {
-    class Ogr : Postać
+    class Golem : Postać
     {
-        private String opis;
         public override int Życie
         {
             // ustawic wartosc zycia
@@ -20,20 +19,16 @@ namespace GraTekstowaJipp
             set { obrażeniaPostaci = value + 3; }
         }
 
-        public Ogr() { }
-        public Ogr(String imię) : base(imię) { }
+        public Golem() { }
+        public Golem(String imię) : base(imię) { }
+        ~Golem() { System.Diagnostics.Trace.WriteLine("Wywołano destruktor w klasie Golem"); }
+
 
         public override void KrzyknijNaPrzeciwnika()
         {
-            String informacja = "Wyjesz w niebo, Twoje życie podwaja się";
+            String informacja = "Golem wydaje przerażające odgłosy, jego życie wzrasta o 10";
             Silnik.WyświetlDialogPotwora(informacja);
-            obrażeniaPostaci *= 2;
-        }
-
-        public override void WyświetlOpisPostaci()
-        {
-            opis = "Potwór Ogr \n obrażenia:" + obrażeniaPostaci + ", życie:" + życiePostaci;
-            Silnik.WyświetlInformacje(opis);
+            życiePostaci += 10;
         }
     }
 }

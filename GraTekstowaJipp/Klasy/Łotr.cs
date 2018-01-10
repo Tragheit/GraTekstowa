@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using SilnikGraficzny;
 
 namespace GraTekstowaJipp
 {
-    class Straszydło : Postać
+    public class Łotr : Bohater
     {
         private String opis;
         public override int Życie
@@ -20,27 +21,22 @@ namespace GraTekstowaJipp
             set { obrażeniaPostaci = value + 3; }
         }
 
-        public Straszydło() { }
-        public Straszydło(String imię) : base(imię) { }
+        public Łotr() { }
+        public Łotr(String imię) : base(imię) { }
+        ~Łotr() { }
 
         public override void KrzyknijNaPrzeciwnika()
         {
-            String informacja = "Twój pisk nie robi wrażenia na przeciwniku";
-            Silnik.WyświetlDialogPotwora(informacja);
-        }
-
-        public override void Uciekaj()
-        {
-            String informacja = "Straszydło znika, walka zakończona";
-            Silnik.WyświetlDialogPotwora(informacja);
-            życiePostaci = 0;
+            String informacja = "Krzyczysz na wroga, wzmacniasz swoje morale, obrażenia rosną o 2.";
+            Silnik.WyświetlDialogPostaci(informacja);
+            obrażeniaPostaci += 2;
         }
 
         public override void WyświetlOpisPostaci()
         {
-            opis = "Potwór Straszydło \n obrażenia:" + obrażeniaPostaci + ", życie:" + życiePostaci;
+            opis = "Klasa Łotr \n obrażenia:" + obrażeniaPostaci + ", życie:" + życiePostaci +
+                "\n Budzi lęk u przeciwnika, co ułatwia mu walkę" + "\n";
             Silnik.WyświetlInformacje(opis);
         }
-
     }
 }

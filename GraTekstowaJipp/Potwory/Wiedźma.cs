@@ -5,7 +5,6 @@ namespace GraTekstowaJipp
 {
     class Wiedźma : Postać
     {
-        private String opis;
         public override int Życie
         {
             // ustawic wartosc zycia
@@ -22,18 +21,13 @@ namespace GraTekstowaJipp
 
         public Wiedźma() { }
         public Wiedźma(String imię) : base(imię) { }
+        ~Wiedźma() { System.Diagnostics.Trace.WriteLine("Wywołano destruktor w klasie Wiedźma"); }
 
         public override void KrzyknijNaPrzeciwnika()
         {
             String informacja = "Wykrzykujesz zaklęcie, które Cię leczy i wzmacnia obrażenia";
             Silnik.WyświetlDialogPotwora(informacja);
             obrażeniaPostaci += 2;
-        }
-
-        public override void WyświetlOpisPostaci()
-        {
-            opis = "Potwór Ogr \n obrażenia:" + obrażeniaPostaci + ", życie:" + życiePostaci;
-            Silnik.WyświetlInformacje(opis);
         }
     }
 }
