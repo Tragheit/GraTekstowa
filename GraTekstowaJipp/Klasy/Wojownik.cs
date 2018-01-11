@@ -10,13 +10,13 @@ namespace GraTekstowaJipp
         private String opis;
         public override int Życie
         {
-            get { return życiePostaci - 3; }
-            set { życiePostaci = value + 3; }
+            get { return życiePostaci - 9; }
+            set { życiePostaci = value + 9; }
         }
 
         public override int Obrażenia {
-            get { return obrażeniaPostaci - 3; }
-            set { obrażeniaPostaci = value + 3; }
+            get { return obrażeniaPostaci - 11; }
+            set { obrażeniaPostaci = value + 11; }
         }
 
         public Wojownik() {}

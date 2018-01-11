@@ -10,17 +10,15 @@ namespace GraTekstowaJipp
         private String opis;
         public override int Życie
         {
-            get { return życiePostaci - 2; }
-            set { życiePostaci = value + 2; }
+            get { return życiePostaci -162; }
+            set { życiePostaci = value + 16; }
         }
 
         public override int Obrażenia
         {
-            get { return obrażeniaPostaci - 5; }
-            set { obrażeniaPostaci = value + 5; }
+            get { return obrażeniaPostaci - 6; }
+            set { obrażeniaPostaci = value + 6; }
         }
-
-        private List<Przedmiot> Ekwipunek = new List<Przedmiot>();
 
         public Mag() { }
         public Mag(String imię) : base(imię) { }

@@ -6,17 +6,15 @@ namespace GraTekstowaJipp
     class Straszydło : Postać
     {
         public override int Życie
-        {
-            // ustawic wartosc zycia
-            get { return życiePostaci - 3; }
-            set { życiePostaci = value + 3; }
+        {   
+            get { return życiePostaci - 4; }
+            set { życiePostaci = value + 4; }
         }
 
         public override int Obrażenia
         {
-            //ustawic wartosc obrazen
-            get { return obrażeniaPostaci - 3; }
-            set { obrażeniaPostaci = value + 3; }
+            get { return obrażeniaPostaci - 1; }
+            set { obrażeniaPostaci = value + 1; }
         }
 
         public Straszydło() { }

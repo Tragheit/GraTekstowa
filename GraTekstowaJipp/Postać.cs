@@ -16,7 +16,7 @@ namespace GraTekstowaJipp
         {
             //domyślne wartości
             Obrażenia = 2;
-            Życie = 5;
+            Życie = 2;
         }
 
         public Postać(String Imię) : this(){
@@ -46,12 +46,11 @@ namespace GraTekstowaJipp
         public virtual void Walcz(Postać przeciwnik) {
             String atakPostaci = Imię + " atakuje " + przeciwnik.Imię + " zadając " + obrażeniaPostaci;
             String atakPotwora = przeciwnik.Imię + " atakuje " + Imię + " zadając " + przeciwnik.obrażeniaPostaci;
-            String potwórWygrywa = Imię + " zwyciężą ";
+            String potwórWygrywa = przeciwnik.Imię + " zwycięża ";
             String postaćWygrywa = Imię + " zwycięża ";
 
-            while (życiePostaci > 0 || przeciwnik.życiePostaci > 0)
+            while (życiePostaci > 0 && przeciwnik.życiePostaci > 0)
             {
-                
                 Silnik.WyświetlDialogPostaci(atakPostaci);
                 przeciwnik.życiePostaci -= obrażeniaPostaci;
                 System.Threading.Thread.Sleep(1500);

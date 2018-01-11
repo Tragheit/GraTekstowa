@@ -5,22 +5,20 @@ using System.Text;
 
 namespace GraTekstowaJipp
 {
-    public class MiksturaWzmocnienia : Przedmiot
+    public class MiksturaWzmocnienia : Mikstura
     {
         private static String nazwa = "Mikstura Wzmocnienia";
         private static String opis = 
             "Ta specjalna mikstura wzmacnia Twoje obrażenia " +"i regeneruje nieco zdrowia";
 
-        public int WartośćWzmocnieniaZdrowia { get; set; }
-        public int WartośćWzmocnieniaObrażeń { get; set; }
+        public int wartośćWzmocnienia;
 
         public MiksturaWzmocnienia() { }
 
         public MiksturaWzmocnienia
-            (int WZdrowie,int WObrażenia) :base(nazwa + WZdrowie + WObrażenia, opis)
+            (int wartośćLeczenia,int wartośćWzmocnienia) :base(nazwa + wartośćLeczenia + wartośćWzmocnienia, opis, wartośćLeczenia)
         {
-            this.WartośćWzmocnieniaObrażeń = WObrażenia;
-            this.WartośćWzmocnieniaZdrowia = WZdrowie;
+            this.wartośćWzmocnienia = wartośćWzmocnienia;
         }
     }
 }

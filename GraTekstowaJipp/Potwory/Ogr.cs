@@ -7,16 +7,14 @@ namespace GraTekstowaJipp
     { 
         public override int Życie
         {
-            // ustawic wartosc zycia
-            get { return życiePostaci - 3; }
-            set { życiePostaci = value + 3; }
+            get { return życiePostaci - 3000; }
+            set { życiePostaci = value + 3000; }
         }
 
         public override int Obrażenia
         {
-            //ustawic wartosc obrazen
-            get { return obrażeniaPostaci - 3; }
-            set { obrażeniaPostaci = value + 3; }
+            get { return obrażeniaPostaci - 3000; }
+            set { obrażeniaPostaci = value + 3000; }
         }
 
         public Ogr() { }

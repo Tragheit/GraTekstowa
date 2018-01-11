@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Klasy\Bohater.cs" />
+    <Compile Include="Przedmioty\Mikstura.cs" />
     <Compile Include="Przedmioty\Broń.cs" />
     <Compile Include="Potwory\Golem.cs" />
     <Compile Include="Logika_Sterowanie\Gra.cs" />

@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace GraTekstowaJipp
 {
-    public class MiksturaLecząca : Przedmiot
+    public class MiksturaLecząca : Mikstura
     {
         private static String nazwa = "Mikstura Lecząca";
         private static String opis = "Ta specjalna mikstura przywraca trochę zdrowia";
-        public int wartośćLeczenia;
+       
+        public MiksturaLecząca() { }
+        public MiksturaLecząca(int wartośćLeczenia) :base(nazwa + wartośćLeczenia, opis, wartośćLeczenia) { }
 
-        public MiksturaLecząca(int wartośćLeczenia) :base(nazwa + wartośćLeczenia, opis) {
-            this.wartośćLeczenia = wartośćLeczenia;
+        public static MiksturaLecząca operator +(MiksturaLecząca miksturaPierwsza, MiksturaLecząca miksturaDruga)
+        {
+            return new MiksturaLecząca(miksturaPierwsza.wartośćLeczenia + miksturaDruga.wartośćLeczenia);
         }
     }
 }

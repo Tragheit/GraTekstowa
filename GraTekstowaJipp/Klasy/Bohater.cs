@@ -22,7 +22,7 @@ namespace GraTekstowaJipp
         public Bohater(String imię) : base(imię) {}
         ~Bohater() { }
 
-        private List<Przedmiot> Ekwipunek = new List<Przedmiot>();
+        public List<Przedmiot> Ekwipunek = new List<Przedmiot>();
 
         public void WyświetlEkwipunek()
         {
@@ -34,7 +34,7 @@ namespace GraTekstowaJipp
             }
         }
 
-        public void DodajPrzedmiotDoEkwipunku(Przedmiot przedmiot)
+        public void DodajPrzedmiotDoEkwipunku(Mikstura przedmiot)
         {
             Ekwipunek.Add(przedmiot);
         }
@@ -42,29 +42,25 @@ namespace GraTekstowaJipp
         public void UżyjPrzedmiotu(MiksturaLecząca miksturaLecząca)
         {
             życiePostaci += miksturaLecząca.wartośćLeczenia;
-            Silnik.WyświetlInformacje("Uleczyłeś się o: " + miksturaLecząca.wartośćLeczenia + 3);
+            Silnik.WyświetlInformacje("\n Uleczyłeś się o: " + miksturaLecząca.wartośćLeczenia);
             Ekwipunek.Remove(miksturaLecząca);
         }
 
         public void UżyjPrzedmiotu(Broń broń)
         {
             obrażeniaPostaci += broń.Obrażenia;
-            Silnik.WyświetlInformacje("Broń wzmacnia twoje obrażenia o: " + broń.Obrażenia);
+            Silnik.WyświetlInformacje("\n Broń wzmacnia twoje obrażenia o: " + broń.Obrażenia);
         }
 
         public void UżyjPrzedmiotu(MiksturaWzmocnienia miksturaWzmocnienia)
         {
-            życiePostaci += miksturaWzmocnienia.WartośćWzmocnieniaZdrowia;
-            obrażeniaPostaci += miksturaWzmocnienia.WartośćWzmocnieniaObrażeń;
+            życiePostaci += miksturaWzmocnienia.wartośćLeczenia;
+            obrażeniaPostaci += miksturaWzmocnienia.wartośćWzmocnienia;
             Silnik.WyświetlInformacje
-                ("Twoje życie wzrosło o: " + miksturaWzmocnienia.WartośćWzmocnieniaZdrowia +
-                ",a Twoje obrażenia wzrosły o: " + miksturaWzmocnienia.WartośćWzmocnieniaObrażeń);
+                ("\n Twoje życie wzrosło o: " + miksturaWzmocnienia.wartośćLeczenia +
+                " ,a Twoje obrażenia wzrosły o: " + miksturaWzmocnienia.wartośćWzmocnienia);
             Ekwipunek.Remove(miksturaWzmocnienia);
         }
-
-
-
-
 
         public abstract void WyświetlOpisPostaci();
     }
